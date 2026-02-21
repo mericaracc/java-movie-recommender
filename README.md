@@ -27,3 +27,5 @@ Place `ratings.csv` and `movies.csv` in the same folder as the program, then:
 ```bash
 javac MovieRecommender.java
 java MovieRecommender
+
+mvn -q exec:java -Dexec.mainClass="com.mycompany.movierecommender.MovieRecommender"
