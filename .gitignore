@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Maven build output
+target/
+
+# IDE files
+.idea/
+.vscode/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
