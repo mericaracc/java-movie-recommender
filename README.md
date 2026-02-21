@@ -16,6 +16,10 @@ Download **MovieLens Latest Small** from GroupLens:
 
 > Note: The dataset is not included in this repository. Please download it separately.
 
+## Algorithm (Baseline)
+
+For a given target user, the system excludes movies already rated by the user and computes the average rating of each remaining movie across all users. To improve stability and reduce noise, only movies with more than 20 total ratings are considered (minimum rating count filter). The movies are then sorted in descending order by their average rating, and the top-N results are returned as recommendations.
+
 ## How to Run
 
 ### Option A — NetBeans (recommended)
@@ -29,3 +33,4 @@ Download **MovieLens Latest Small** from GroupLens:
 From the project folder:
 ```bash
 mvn -q exec:java -Dexec.mainClass="com.mycompany.movierecommender.MovieRecommender"
+
