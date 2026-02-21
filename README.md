@@ -1,31 +1,31 @@
-# java-movie-recommender
-# Movie Recommender (Java) – MovieLens Small
+# Movie Recommender (Java) — MovieLens Small
 
-## Overview
-A simple movie recommendation program written in Java.  
-It reads the MovieLens “small” dataset (`ratings.csv`, `movies.csv`) and recommends movies a target user has not rated yet.
+A student-friendly movie recommendation project in **Java** using the **MovieLens (small)** dataset.  
+The program reads `ratings.csv` and `movies.csv`, then recommends movies a target user has not rated yet by ranking movies with a **baseline score** (average rating with a minimum-rating-count filter).
 
-This version is intentionally student-friendly (basic Java + ArrayList, no external libraries).
+## Features
+- Parses real-world CSV data (`ratings.csv`, `movies.csv`)
+- Filters out movies with too few ratings (to reduce noise)
+- Produces Top-N recommendations with movie titles
+- Uses only basic Java + `ArrayList` (no external libraries)
 
-## How it works
-1. Loads all ratings from `ratings.csv`
-2. Loads movie titles from `movies.csv`
-3. For each movie the target user has not rated:
-   - Computes the movie’s average rating across all users
-   - Ignores movies with very small sample size (threshold: > 20 ratings)
-4. Sorts movies by average rating (descending) and prints Top-N recommendations
+## Dataset (MovieLens)
+Download **MovieLens Latest Small** from GroupLens:
+- Dataset: MovieLens Small
+- Files used: `ratings.csv`, `movies.csv`
 
-## Dataset
-- MovieLens “small” dataset (GroupLens)
-- Files used:
-  - `ratings.csv`
-  - `movies.csv`
+> Note: The dataset is not included in this repository. Please download it separately.
 
-## Build & Run
-Place `ratings.csv` and `movies.csv` in the same folder as the program, then:
+## How to Run
 
+### Option A — NetBeans (recommended)
+1. Download MovieLens Small and extract it.
+2. Copy these files into the project root (same folder as `pom.xml`):
+   - `ratings.csv`
+   - `movies.csv`
+3. Run the project.
+
+### Option B — Terminal (Maven)
+From the project folder:
 ```bash
-javac MovieRecommender.java
-java MovieRecommender
-
 mvn -q exec:java -Dexec.mainClass="com.mycompany.movierecommender.MovieRecommender"
